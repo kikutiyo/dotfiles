@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 # CapsLockをCtrlにする（CapsLockは無効化）
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 # トラックパッドのタップでクリックを無効化

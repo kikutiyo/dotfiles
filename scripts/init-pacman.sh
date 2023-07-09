@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 # pamac設定
 sudo sed -i -E 's/^#+(EnableAUR|NoUpdateHideIcon)/¥1/' /etc/pamac.conf
 # リポジトリミラー設定
@@ -10,6 +12,6 @@ sudo pacman -Syyu --noconfirm
 sudo pacman -S --needed --noconfirm base-devel
 git clone https://aur.archlinux.org/paru.git
 cd paru
-makepkg -si --noconfirm
+makepkg -si --needed --noconfirm
 cd ..
 rm -rf paru
