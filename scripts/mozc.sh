@@ -5,9 +5,9 @@ set -eu
 CONF_DIR=~/.config/environment.d
 CONF_FILE=${CONF_DIR}/im.conf
 
-paru -S --needed --noconfirm ¥
-    fcitx5-im ¥
-    mozc-ut ¥
+paru -S --needed --noconfirm \
+    fcitx5-im \
+    mozc-ut \
     fcitx5-mozc-ut
 
 if [[ ! -f ${CONF_FILE} ]]; then
