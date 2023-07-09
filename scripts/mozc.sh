@@ -10,7 +10,7 @@ paru -S --needed --noconfirm \
     mozc-ut \
     fcitx5-mozc-ut
 
-if [[ ! -f ${CONF_FILE} ]]; then
+if [[ ! -e ${CONF_FILE} ]]; then
     if [[ ! -d ${CONF_DIR} ]]; then
         mkdir -p ${CONF_DIR}
     fi

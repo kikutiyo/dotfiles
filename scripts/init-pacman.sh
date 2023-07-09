@@ -11,7 +11,7 @@ sudo pacman -Syyu --noconfirm
 # paruのインストール
 sudo pacman -S --needed --noconfirm base-devel
 git clone https://aur.archlinux.org/paru-bin.git
-cd paru
+cd paru-bin
 makepkg -si --needed --noconfirm
 cd ..
-rm -rf paru
+rm -rf paru-bin
