@@ -3,7 +3,7 @@
 set -eu
 
 # pamac設定
-sudo sed -i -E 's/^#+(EnableAUR|NoUpdateHideIcon)/¥1/' /etc/pamac.conf
+sudo sed -i -E 's/^#+(EnableAUR|NoUpdateHideIcon)/\1/' /etc/pamac.conf
 # リポジトリミラー設定
 sudo pacman-mirrors -c Japan,Taiwan,Singapore
 # パッケージ更新
