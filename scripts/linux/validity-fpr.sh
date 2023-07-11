@@ -2,7 +2,7 @@
 
 set -eu
 
-sudo pacman -R --noconfirm fprintd
+sudo pacman -Q fprintd && sudo pacman -R --noconfirm fprintd
 paru -S --needed --noconfirm \
     open-fprintd \
     python-validity
@@ -14,5 +14,5 @@ sudo cp -R $(cd $(dirname $0) && pwd)/systemd/overrides/open-fprintd-resume.serv
 sudo systemctl enable \
     python3-validity.service \
     open-fprintd.service \
-    open-fprintf-suspend.service \
-    open-fprintf-resume.service
+    open-fprintd-suspend.service \
+    open-fprintd-resume.service
