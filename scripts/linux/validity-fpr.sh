@@ -9,7 +9,7 @@ paru -S --needed --noconfirm \
 
 OVERRIDE_DIR=/etc/systemd/system/open-fprintd-resume.service.d
 test -d ${OVERRIDE_DIR} || sudo mkdir -p ${OVERRIDE_DIR}
-sudo cp -R $(cd $(dirname $0) && pwd)/systemd-overrides/open-fprintd-resume.conf ${OVERRIDE_DIR}/override.conf
+sudo cp -R $(cd $(dirname $0) && pwd)/systemd/overrides/open-fprintd-resume.service ${OVERRIDE_DIR}/override.conf
 
 sudo systemctl enable \
     python3-validity.service \
