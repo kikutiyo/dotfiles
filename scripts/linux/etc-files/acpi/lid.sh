@@ -28,3 +28,4 @@ case "$(sed -E 's/^state:\s+//' ${LID_STATE})" in
         done
         ;;
 esac
+exit 0
