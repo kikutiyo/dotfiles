@@ -7,4 +7,3 @@ paru -S --needed --noconfirm \
     intel-media-driver \
     libva-utils \
     intel-gpu-tools
-ln -s $(cd .. && pwd)/xdg_config/chrome-flags.conf ${HOME}/.config/chrome-flags.conf
