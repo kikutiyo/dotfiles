@@ -47,7 +47,8 @@ gext install \
 	WallpaperSwitcher@Rishu \
 	caffeine@patapon.info \
     autohide-battery@sitnik.ru \
-    compiz-alike-magic-lamp-effect@hermes83.github.com
+    compiz-alike-magic-lamp-effect@hermes83.github.com \
+    openweather-extension@jenslody.de
 
 # ホームディレクトリ配下のフォルダ名を英名に変更
 LANG=C xdg-user-dirs-gtk-update
