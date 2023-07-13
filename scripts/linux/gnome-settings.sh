@@ -2,6 +2,11 @@
 
 set -eu
 
+# フォントのインストール
+paru -S --needed --noconfirm \
+    noto-fonts-cjk \
+    ttf-hackgen
+
 # CapsLockをCtrlにする（CapsLockは無効化）
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 # トラックパッドのタップでクリックを無効化
@@ -24,6 +29,24 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 5.
 gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
 # 分数スケーリングを許可・X11セッション終了時にXwaylandを自動終了
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer', 'autoclose-xwayland']"
+# フォント設定
+gsettings set org.gnome.desktop.interface document-font-name 'Noto Sans CJK JP DemiLight 11'
+gsettings set org.gnome.desktop.interface font-name 'Noto Sans CJK JP DemiLight 11'
+gsettings set org.gnome.desktop.interface monospace-font-name 'HackGen Regular 11'
+gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Noto Sans CJK JP DemiLight 11'
+
+# gnome-extensions-cliのインストール
+paru -S --needed --noconfirm python-pipx
+pipx install gnome-extensions-cli
+# 機能拡張のインストール
+gext install \
+    kimpanel@kde.org \
+    cloudflare-warp-toggle@khaled.is-a.dev \
+    battery-indicator-icon@Deminder \
+	blur-my-shell@aunetx \
+	WallpaperSwitcher@Rishu \
+	caffeine@patapon.info \
+    autohide-battery@sitnik.ru
 
 # ホームディレクトリ配下のフォルダ名を英名に変更
 LANG=C xdg-user-dirs-gtk-update
