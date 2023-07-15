@@ -2,10 +2,13 @@
 
 set -eu
 
-# フォントのインストール
-paru -S --needed --noconfirm \
-    noto-fonts-cjk \
-    ttf-hackgen
+# MutterとGNOME設定を分数スケーリング対応版に差し替え
+for __PKG_NAME in "mutter gnome-control-center"; do
+    pacman -Qq ${__PKG_NAME}-x11-scaling || {
+        sudo pacman -R --noconfirm ${__PKG_NAME}
+        sudo pacman -S --noconfirm ${__PKG_NAME}-x11-scaling
+    }
+done
 
 # CapsLockをCtrlにする（CapsLockは無効化）
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
@@ -29,6 +32,12 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 5.
 gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
 # 分数スケーリングを許可・X11セッション終了時にXwaylandを自動終了
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer', 'autoclose-xwayland']"
+
+# フォントのインストール
+paru -S --needed --noconfirm \
+    noto-fonts-cjk \
+    ttf-hackgen
+
 # フォント設定
 gsettings set org.gnome.desktop.interface document-font-name 'Noto Sans CJK JP DemiLight 11'
 gsettings set org.gnome.desktop.interface font-name 'Noto Sans CJK JP DemiLight 11'
