@@ -30,6 +30,8 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 5.0
 # 100%以上の音量を許可
 gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
+# 新しいウィンドウを開く際に画面中央に表示
+gsettings set org.gnome.mutter center-new-windows true
 # 分数スケーリングを許可・X11セッション終了時にXwaylandを自動終了
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer', 'autoclose-xwayland']"
 
