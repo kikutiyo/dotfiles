@@ -10,8 +10,10 @@ sudo pacman-mirrors -c Japan,Taiwan,Singapore
 sudo pacman -Syyu --noconfirm
 # paruのインストール
 sudo pacman -S --needed --noconfirm base-devel
-git clone https://aur.archlinux.org/paru-bin.git
-cd paru-bin
-makepkg -si --needed --noconfirm
-cd ..
-rm -rf paru-bin
+pacman -Qq paru-bin || {
+    git clone https://aur.archlinux.org/paru-bin.git
+    cd paru-bin
+    makepkg -si --needed --noconfirm
+    cd ..
+    rm -rf paru-bin
+}

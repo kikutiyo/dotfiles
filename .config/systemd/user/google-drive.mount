@@ -1,0 +1,9 @@
+[Unit]
+After=network-online.target
+[Mount]
+Type=rclone
+What=google-drive:
+Where=%h/mnt/google-drive
+Options=vfs-cache-mode=full,cache-dir=%h/.cache/rclone
+[Install]
+WantedBy=default.target
