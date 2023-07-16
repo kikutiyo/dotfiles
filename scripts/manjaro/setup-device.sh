@@ -2,33 +2,34 @@
 
 set -eu
 
-get_usb_device_id() {
-    lsusb -d $1: | sed -E 's/^.+ID (.{4}:.{4}) .+$/\1/'
-}
-
 BASE_DIR=$(cd $(dirname $0) && pwd)
 
 # Synaptics Validity指紋認証センサーがある場合はpython-validityをインストール
-if [[ "$(get_usb_device_id 06cb)" =~ 06cb:00(9a) ]]; then
-    echo "=====> Setup python-validity"
-    pacman -Qq fprintd && sudo pacman -R --noconfirm fprintd
-    paru -S --needed --noconfirm \
-        open-fprintd \
-        python-validity
-    sudo cp -Rv ${BASE_DIR}/etc/systemd/system/open-fprintd-resume.service.d /etc/systemd/system
-    sudo systemctl enable --now \
-        python3-validity.service \
-        open-fprintd.service 
-    sudo systemctl enable \
-        open-fprintd-suspend.service \
-        open-fprintd-resume.service
-fi
+for DEV_ID in 06cb:009a 138a:0097; do
+    echo $DEV_ID
+    lsusb -d ${DEV_ID} && {
+        echo "=====> Setup python-validity"
+        pacman -Qq fprintd && sudo pacman -R --noconfirm fprintd
+        paru -S --needed --noconfirm \
+            open-fprintd \
+            python-validity
+        sudo cp -Rv ${BASE_DIR}/etc/systemd/system/open-fprintd-resume.service.d /etc/systemd/system
+        sudo systemctl enable --now \
+            python3-validity.service \
+            open-fprintd.service 
+        sudo systemctl enable \
+            open-fprintd-suspend.service \
+            open-fprintd-resume.service
+        break
+    }
+done
 
 # LTEモジュールがある場合はModemManagerのFCCアンロックスクリプトを設定
-if [[ ! -z "$(get_usb_device_id 1199)" ]]; then
+DEV_ID=1199:907b
+lsusb -d ${DEV_ID} && {
     echo "=====> Enable Sierra Wireless LTE module"
-    sudo ln -sf /usr/share/ModemManager/fcc-unlock.available.d/1199 /etc/ModemManager/fcc-unlock.d/${LTE_DEV_ID}
-fi
+    sudo ln -sf /usr/share/ModemManager/fcc-unlock.available.d/1199 /etc/ModemManager/fcc-unlock.d/${DEV_ID}
+}
 
 # ノートの場合は遅延ハイバネーションとリッドイベント処理を設定
 CHASSIS_TYPE=$(sudo dmidecode --type chassis | grep -i 'Type' | sed -E 's/^.*: //')
