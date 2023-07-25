@@ -14,6 +14,7 @@ paru -S --needed --noconfirm --sudoloop \
     noto-fonts \
     noto-fonts-cjk \
     noto-fonts-emoji \
+    noto-fonts-extra \
     ttf-hackgen 
 # 分数スケーリング対応版mutter,gccに置き換え
 paru -S --needed --sudoloop --batchinstall \
