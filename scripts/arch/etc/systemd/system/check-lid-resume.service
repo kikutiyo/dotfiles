@@ -1,0 +1,10 @@
+[Unit]
+Description=Check lid status when system resumed
+After=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
+
+[Service]
+Type=oneshot
+ExecStart=/etc/acpi/lid.sh
+
+[Install]
+WantedBy=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
