@@ -12,6 +12,6 @@ fi
 
 # Set additional pathes
 path=(
-  $HOME/.local/bin(N)
   $path
+  $HOME/.local/bin(N)
 )

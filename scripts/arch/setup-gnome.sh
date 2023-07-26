@@ -50,6 +50,9 @@ gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 paru -S --needed --noconfirm --sudoloop capitaine-cursors
 gsettings set org.gnome.desktop.interface cursor-theme 'capitaine-cursors'
 
+# QT5アプリ用GNOMEテーマ統合を設定
+paru -S --needed --noconfirm --sudoloop qgnomeplatform-qt5 qt5ct
+
 # gnome-extensions-cliのインストール
 paru -S --needed --noconfirm --sudoloop python-pipx
 pipx install gnome-extensions-cli
