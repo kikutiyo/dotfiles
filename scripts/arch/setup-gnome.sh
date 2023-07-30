@@ -36,6 +36,31 @@ gsettings set org.gnome.desktop.interface font-name 'Noto Sans CJK JP DemiLight 
 gsettings set org.gnome.desktop.interface monospace-font-name 'HackGen Regular 11'
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Noto Sans CJK JP DemiLight 11'
 
+# アプリフォルダ設定を追加・更新
+gsettings set org.gnome.desktop.app-folders folder-children "['Utilities', 'YaST', 'System-Tools', 'Network', 'Office', 'AudioVideo', 'Graphics', 'Development', 'Game']"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Utilities/ categories "['X-GNOME-Utilities', 'Utility']"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/System-Tools/ name 'System-Tools.directory'
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/System-Tools/ translate true
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/System-Tools/ categories "['X-GNOME-SystemSettings', 'System', 'Settings']"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Network/ name 'Network.directory'
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Network/ translate true
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Network/ categories "['Network']"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Office/ name 'Office.directory'
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Office/ translate true
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Office/ categories "['Office']"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/AudioVideo/ name 'AudioVideo.directory'
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/AudioVideo/ translate true
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/AudioVideo/ categories "['AudioVideo']"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Graphics/ name 'Graphics.directory'
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Graphics/ translate true
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Graphics/ categories "['Graphics']"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Development/ name 'Development.directory'
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Development/ translate true
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Development/ categories "['Development']"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Game/ name 'Game.directory'
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Game/ translate true
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Game/ categories "['Game']"
+
 # GTK+アプリ用テーマを設定
 paru -S --needed --noconfirm --sudoloop adw-gtk3
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
