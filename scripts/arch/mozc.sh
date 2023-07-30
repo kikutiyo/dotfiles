@@ -3,7 +3,7 @@
 set -eu
 
 # インストール
-paru -S --needed --noconfirm --suduloop --batchinstall \
+paru -S --needed --noconfirm --sudoloop --batchinstall \
     fcitx5-im \
     mozc-ut \
     fcitx5-mozc-ut
