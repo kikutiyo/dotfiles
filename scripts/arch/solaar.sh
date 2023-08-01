@@ -3,7 +3,7 @@
 set -eu
 
 # インストール
-paru -S --needed --noconfirm --suduloop \
+paru -S --needed --noconfirm --sudoloop \
     solaar \
     libayatana-appindicator
 # 自動起動ファイルを作成

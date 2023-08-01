@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu
+set -e
 
 # GNOMEメタパッケージのインストール
 if [[ "${XDG_CURRENT_DESKTOP}" != "GNOME" ]]; then

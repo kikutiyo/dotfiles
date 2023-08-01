@@ -26,7 +26,8 @@ gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
 gsettings set org.gnome.mutter center-new-windows true
 # バッテリーのパーセント表示を有効化
 gsettings set org.gnome.desktop.interface show-battery-percentage true
-
+# 最大化・最小化ボタンを表示
+gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
 # ダークモードに変更
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 

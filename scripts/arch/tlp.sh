@@ -3,7 +3,7 @@
 set -eu
 
 # インストール
-paru -S --needed --noconfirm --sodoloop --batchinstall \
+paru -S --needed --noconfirm --sudoloop --batchinstall \
     tlp \
     tlpui \
     smartmontools
