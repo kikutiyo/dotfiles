@@ -9,9 +9,7 @@ fi
 # GDMと追加アプリ・フォントをインストール
 paru -S --needed --noconfirm --sudoloop \
     gdm \
-    gnome-extra \
     gnome-tweaks \
-    gnome-terminal \
     noto-fonts \
     noto-fonts-cjk \
     noto-fonts-emoji \
