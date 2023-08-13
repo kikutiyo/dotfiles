@@ -93,15 +93,20 @@ ${HOME}/.local/bin/gext install \
     blur-my-shell@aunetx \
     burn-my-windows@schneegans.github.com \
     caffeine@patapon.info \
-    clipboard-indicator@Dieg0Js.github.io \
+    clipboard-indicator@tudmotu.com \
     cloudflare-warp-toggle@khaled.is-a.dev \
     compiz-alike-magic-lamp-effect@hermes83.github.com \
     custom-accent-colors@demiskp \
     dash-to-dock@micxgx.gmail.com \
     gnome-ui-tune@itstime.tech \
+    just-perfection-desktop@just-perfection \
     kimpanel@kde.org \
     legacyschemeautoswitcher@joshimukul29.gmail.com \
+    mute-unmute@mcast.gnomext.com \
+    openweather-extension@jenslody.de \
     rclone-manager@germanztz.com \
+    reboottouefi@ubaygd.com \
+    solaar-extension@sidevesh \
     status-area-horizontal-spacing@mathematical.coffee.gmail.com
 
 # ホームディレクトリ配下のフォルダ名を英名に変更
