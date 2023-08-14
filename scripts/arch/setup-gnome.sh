@@ -62,19 +62,13 @@ gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Noto Sans CJK JP D
 # gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Game/ translate true
 # gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Game/ categories "['Game']"
 
-# GTK+アプリ用テーマを設定
+# GTK3アプリ用テーマを設定
 paru -S --needed --noconfirm --sudoloop adw-gtk3
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 
-# Papirusアイコンを設定
-paru -S --needed --noconfirm --sudoloop \
-    papirus-icon-theme \
-    papirus-folders
-gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-
-# Capitaineカーソルを設定
-paru -S --needed --noconfirm --sudoloop capitaine-cursors
-gsettings set org.gnome.desktop.interface cursor-theme 'capitaine-cursors'
+# Telaアイコンを設定
+paru -S --needed --noconfirm --sudoloop tela-icon-theme
+gsettings set org.gnome.desktop.interface icon-theme 'Tela-green-dark'
 
 # QT5アプリ用GNOMEテーマ統合を設定
 paru -S --needed --noconfirm --sudoloop qgnomeplatform-qt5 qt5ct
@@ -85,6 +79,7 @@ pipx install gnome-extensions-cli
 # 機能拡張のインストール
 ${HOME}/.local/bin/gext install \
     CoverflowAltTab@palatis.blogspot.com \
+    PrivacyMenu@stuarthayhurst \
     WallpaperSwitcher@Rishu \
     appindicatorsupport@rgcjonas.gmail.com \
     arcmenu@arcmenu.com \
@@ -104,6 +99,7 @@ ${HOME}/.local/bin/gext install \
     legacyschemeautoswitcher@joshimukul29.gmail.com \
     mute-unmute@mcast.gnomext.com \
     openweather-extension@jenslody.de \
+    quick-settings-tweaks@qwreey \
     rclone-manager@germanztz.com \
     reboottouefi@ubaygd.com \
     solaar-extension@sidevesh \
