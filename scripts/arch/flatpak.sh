@@ -6,10 +6,10 @@ sudo pacman -S --needed \
     flatpak \
     xdg-desktop-portal \
     xdg-desktop-portal-gnome
-flatpak update
-flatpak install \
+flatpak install --noninteractive \
     com.raggesilver.BlackBox \
     com.github.tchx84.Flatseal \
-    ca.desrt.dconf-editor
+    ca.desrt.dconf-editor \
+    com.mattjakeman.ExtensionManager
 
 
