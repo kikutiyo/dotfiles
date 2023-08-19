@@ -82,6 +82,7 @@ ${HOME}/.local/bin/gext install \
     PrivacyMenu@stuarthayhurst \
     WallpaperSwitcher@Rishu \
     appindicatorsupport@rgcjonas.gmail.com \
+    arch-update@RaphaelRochet \
     arcmenu@arcmenu.com \
     autohide-battery@sitnik.ru \
     battery-indicator-icon@Deminder \
