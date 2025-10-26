@@ -20,3 +20,4 @@ if [[ ! -e ~/.config/zsh ]]; then
     echo "export ZDOTDIR=$HOME/.config/zsh" >> ~/.zshenv
 fi
 test -e ~/.config/starship.toml || ln -s "$DOTFILES_DIR/.config/starship.toml" ~/.config/starship.toml
+test -e ~/.config/ghostty || ln -s "$DOTFILES_DIR/.config/ghostty" ~/.config/ghostty
