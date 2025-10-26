@@ -33,18 +33,23 @@ zinit light-mode for \
     zsh-users/zsh-syntax-highlighting
 autoload compinit; compinit
 
-eval "$(op completion zsh)"
-
 zshaddhistory() {
     [[ "$?" == 0 ]]
 }
 
-alias ls="ls --color=auto"
-alias pbcopy="wl-copy"
-alias pbpaste="wl-paste"
-
+eval "$(op completion zsh)"
 eval "$(starship init zsh)"
+eval "$(mise activate zsh)"
+
+case "$(uname)" in
+    Darwin)
+        alias ls="ls -G"
+        ;;
+    Linux)
+        alias ls="ls --color=auto"
+        alias pbcopy="wl-copy"
+        alias pbpaste="wl-paste"
+        ;;
+esac
 
 fastfetch
-
-eval "$(mise activate zsh)"
