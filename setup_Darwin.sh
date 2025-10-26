@@ -2,6 +2,8 @@
 
 set -e
 
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 if [[ ! -e /usr/bin/git ]]; then
     echo "Installing Xcode Command Line Tools..."
     xcode-select --install
@@ -11,4 +13,6 @@ if [[ -z ${HOMEBREW_PREFIX} ]]; then
     bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     eval "$(/opt/homebrew/bin/brew shellenv)"
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshenv
+    echo "export HOMEBREW_BUNDLE_FILE=$DOTFILES_DIR/Brewfile" >> ~/.zshenv
+    echo "export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1" >> ~/.zshenv
 fi
