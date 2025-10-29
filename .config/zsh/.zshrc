@@ -52,4 +52,6 @@ case "$(uname)" in
         ;;
 esac
 
-fastfetch
+if [[ "${TERM_PROGRAM}" == "ghostty" ]]; then
+    fastfetch
+fi
