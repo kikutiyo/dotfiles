@@ -30,16 +30,24 @@ zinit load zdharma-continuum/history-search-multi-word
 zinit light-mode for \
     zsh-users/zsh-completions \
     zsh-users/zsh-autosuggestions \
-    zsh-users/zsh-syntax-highlighting
+    zsh-users/zsh-syntax-highlighting \
+    wintermi/zsh-mise
 autoload compinit; compinit
 
 zshaddhistory() {
     [[ "$?" == 0 ]]
 }
 
+function aws-sso-refresh {
+    for PROF in $(grep sso-session ~/.aws/config | sed -e 's/^\[sso-session \(.*\)\]/\1/' | sort); do
+        echo "Refresh token for profile '${PROF}'..."
+        aws sso login --profile ${PROF} > /dev/null 2>&1
+        echo "==> $(aws sts get-caller-identity --profile ${PROF} --query "Arn" --output text)"
+    done
+}
+
 eval "$(op completion zsh)"
 eval "$(starship init zsh)"
-eval "$(mise activate zsh)"
 
 case "$(uname)" in
     Darwin)
