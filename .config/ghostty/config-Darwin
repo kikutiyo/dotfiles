@@ -1,1 +1,6 @@
 font-size = 15
+macos-icon = custom-style
+macos-icon-frame = beige
+macos-icon-ghost-color = green
+macos-icon-screen-color = green
+

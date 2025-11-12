@@ -43,7 +43,7 @@
 # resize-overlay-duration = 4s 200ms
 config-file = ?config-local
 font-family = HackGen Console NF
-theme = TokyoNight
+theme = Dimmed Monokai
 keybind = performable:ctrl+c=copy_to_clipboard
 keybind = performable:ctrl+v=paste_from_clipboard
 selection-invert-fg-bg = true
@@ -52,4 +52,3 @@ shell-integration-features = no-cursor
 cursor-color = 999999
 window-height = 40
 window-width = 120
-
